@@ -1,0 +1,36 @@
+{
+  "name": "@srttk/email",
+  "version": "1.0.0",
+  "description": "Email utilities",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "scripts": {
+    "test": "vitest",
+    "build": "pkgroll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/srttk/email.git"
+  },
+  "keywords": [
+    "mail",
+    "email-template"
+  ],
+  "author": "Sarath TK <sarath.tk@gmx.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/srttk/email/issues"
+  },
+  "homepage": "https://github.com/srttk/email#readme",
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "pkgroll": "^2.5.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "peerDependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
