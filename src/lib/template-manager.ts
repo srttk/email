@@ -1,4 +1,4 @@
-import { htmlToText } from "./utils";
+import { convert } from "html-to-text";
 import { Eta } from "eta";
 type TemplateReturnFun<T = any> = (data: T) => string;
 type TemplateFile = { path: string };
@@ -39,7 +39,7 @@ export class EmailTemplateCollection<
     }
   }
 
-  private htmlToTextParser: HtmlToTextParserFn = htmlToText;
+  private htmlToTextParser: HtmlToTextParserFn = convert;
 
   setHtmlToText(parser: HtmlToTextParserFn) {
     this.htmlToTextParser = parser;

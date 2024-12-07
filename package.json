@@ -1,13 +1,14 @@
 {
   "name": "@srttk/email",
   "version": "1.0.0",
-  "description": "Email utilities",
+  "description": "Maintainable email & templates",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
   "scripts": {
     "test": "vitest",
     "build": "pkgroll",
-    "example-1":"tsx ./src/example/example-1/index.ts"
+    "example-basic": "tsx ./src/examples/basic/index.ts",
+    "example-1": "tsx ./src/examples/example-1/index.ts"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,8 @@
     "nodemailer": "^6.9.16"
   },
   "dependencies": {
-    "eta": "^3.5.0"
+    "@types/html-to-text": "^9.0.4",
+    "eta": "^3.5.0",
+    "html-to-text": "^9.0.5"
   }
 }

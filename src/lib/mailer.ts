@@ -6,7 +6,7 @@ import {
 
 type SetupOptions = {
   host: string;
-  port: string;
+  port: string | number;
   secure?: boolean;
   username: string;
   password: string;
@@ -54,7 +54,11 @@ export class Mailer<
     const config = this.config;
     this.transport = createTransport({
       host: config.host,
-      port: config?.port ? parseInt(config.port) : 587,
+      port: config?.port
+        ? typeof config?.port === "string"
+          ? parseInt(config.port)
+          : config.port
+        : 587,
       secure: config?.secure ?? false,
       auth: {
         type: "LOGIN",
