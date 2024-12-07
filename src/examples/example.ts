@@ -31,7 +31,7 @@ const mailer = new Mailer({ templates });
 mailer.useTemplate("user:intro").send({});
 mailer
   .useTemplate("user:register", {
-    email: "",
-    name: "",
+    email: "Obiwan Kenobi",
+    name: "obiwan@sw.com",
   })
   .create({});

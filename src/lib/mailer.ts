@@ -153,7 +153,7 @@ export class Mailer<
           text,
         });
       },
-      create: async (
+      create: (
         mailOptions: Omit<EmailOptions, "subject" | "text" | "html">
       ) => {
         const { subject, html, text } = this.templates.compile(
