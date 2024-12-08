@@ -28,10 +28,14 @@ const { text, subject, html } = templates.compile("user:register", {
 
 const mailer = new Mailer({ templates });
 
-mailer.useTemplate("user:intro").send({});
+mailer.useTemplate("user:intro").send({
+  to: "test@test.com",
+});
 mailer
   .useTemplate("user:register", {
     email: "Obiwan Kenobi",
     name: "obiwan@sw.com",
   })
-  .create({});
+  .create({
+    to: "hello",
+  });

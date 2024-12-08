@@ -1,6 +1,6 @@
 {
   "name": "@srttk/email",
-  "version": "1.0.0",
+  "version": "1.0.0-beta-3",
   "description": "Maintainable email & templates",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@types/html-to-text": "^9.0.4",
+    "@types/nodemailer": "latest",
     "eta": "^3.5.0",
     "html-to-text": "^9.0.5"
   }

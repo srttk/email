@@ -4,7 +4,7 @@ import {
   IEmailTemplateRecord,
 } from "./template-manager";
 
-type SetupOptions = {
+export type SetupOptions = {
   host: string;
   port: string | number;
   secure?: boolean;
@@ -14,12 +14,13 @@ type SetupOptions = {
   frommail?: string;
 };
 
-type MailerConfig<T> = {
+export type MailerConfig<T> = {
   templates?: T;
   config?: SetupOptions;
 };
 
-type EmailOptions = nodemailer.SendMailOptions;
+export type EmailOptions = Omit<nodemailer.SendMailOptions, "to" | "subject"> &
+  Required<Pick<nodemailer.SendMailOptions, "to" | "subject">>;
 
 export class Mailer<
   K extends EmailTemplateCollection<Record<string, IEmailTemplateRecord>>
@@ -117,7 +118,7 @@ export class Mailer<
     }
   }
 
-  getMailOptions(mailOptions: EmailOptions) {
+  getMailOptions(mailOptions: Partial<EmailOptions>) {
     return { ...this.defaultMailOptions, ...mailOptions };
   }
 
@@ -151,7 +152,7 @@ export class Mailer<
           ...args
         );
         return await this.send({
-          ...this.getMailOptions(mailOptions),
+          ...(this.getMailOptions(mailOptions) as EmailOptions),
           subject,
           html,
           text,
