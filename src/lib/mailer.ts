@@ -38,6 +38,7 @@ export class Mailer<
 
     if (settings?.config) {
       this.config = settings.config;
+      this.init();
     }
   }
 
@@ -166,7 +167,12 @@ export class Mailer<
           ...args
         );
 
-        return { subject, text, html, ...this.getMailOptions(mailOptions) };
+        return {
+          subject,
+          text,
+          html,
+          ...this.getMailOptions(mailOptions),
+        } as EmailOptions;
       },
     };
   }

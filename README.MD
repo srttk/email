@@ -1,4 +1,4 @@
-# @srttk/email
+# @srttk/email 📬
 
 Type safe/maintainable Email + Templates 📨 
 
