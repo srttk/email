@@ -101,6 +101,7 @@ export class Mailer<
     }
   }
 
+  // Send mail
   async send(mailOptions: EmailOptions) {
     if (!this.checkInitialized()) {
       return null;
@@ -175,5 +176,11 @@ export class Mailer<
         } as EmailOptions;
       },
     };
+  }
+
+  // Set custom transport
+  setTransport(tr: nodemailer.Transporter) {
+    this.transport = tr;
+    this.isInitialized = true;
   }
 }
